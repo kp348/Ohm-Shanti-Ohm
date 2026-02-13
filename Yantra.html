@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroGuard | Enterprise Compliance</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="aero_style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="brand">
+                <h1>AEROGUARD <span class="v-tag">v2.0</span></h1>
+                <p class="subtitle">AIR QUALITY COMPLIANCE & AUDIT SYSTEM</p>
+            </div>
+            
+            <div class="header-metrics">
+                <div class="metric-item">
+                    <span class="label">SAFETY SCORE</span>
+                    <div id="safety-score-val" class="score-display">100</div>
+                </div>
+                <div class="divider"></div>
+                <div class="metric-item">
+                    <span class="label">PURIFIER STATUS</span>
+                    <div id="status-text" class="status-off">STANDBY</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <div class="sensor-grid">
+                <div class="card" id="card-mq2">
+                    <span class="sensor-label">SMOKE (MQ-2)</span>
+                    <div class="readings">
+                        <div id="mq2-delta" class="delta-chip">Δ 0.0%</div>
+                        <div class="reading-row"><span>S1</span><span id="mq2-s1">0</span></div>
+                        <div class="reading-row"><span>S2</span><span id="mq2-s2">0</span></div>
+                    </div>
+                </div>
+                <div class="card" id="card-mq7">
+                    <span class="sensor-label">CARBON MONOXIDE (MQ-7)</span>
+                    <div class="readings">
+                        <div id="mq7-delta" class="delta-chip">Δ 0.0%</div>
+                        <div class="reading-row"><span>S1</span><span id="mq7-s1">0</span></div>
+                        <div class="reading-row"><span>S2</span><span id="mq7-s2">0</span></div>
+                    </div>
+                </div>
+                <div class="card" id="card-mq135">
+                    <span class="sensor-label">NH3 / BENZENE (MQ-135)</span>
+                    <div class="readings">
+                        <div id="mq135-delta" class="delta-chip">Δ 0.0%</div>
+                        <div class="reading-row"><span>S1</span><span id="mq135-s1">0</span></div>
+                        <div class="reading-row"><span>S2</span><span id="mq135-s2">0</span></div>
+                    </div>
+                </div>
+                <div class="card" id="card-dust">
+                    <span class="sensor-label">PARTICULATE MATTER (PM 2.5)</span>
+                    <div class="readings">
+                        <div id="dust-delta" class="delta-chip">Δ 0.0%</div>
+                        <div class="reading-row"><span>S1</span><span id="dust-s1">0</span></div>
+                        <div class="reading-row"><span>S2</span><span id="dust-s2">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="graph-box"><p class="graph-title">MQ-2 SENSOR TREND</p><canvas id="mq2Chart"></canvas></div>
+                <div class="graph-box"><p class="graph-title">MQ-7 SENSOR TREND</p><canvas id="mq7Chart"></canvas></div>
+                <div class="graph-box"><p class="graph-title">MQ-135 SENSOR TREND</p><canvas id="mq135Chart"></canvas></div>
+                <div class="graph-box"><p class="graph-title">PM 2.5 SENSOR TREND</p><canvas id="dustChart"></canvas></div>
+            </div>
+
+            <div class="bottom-area">
+                <div class="graph-box highlight-primary">
+                    <p class="graph-title">SYSTEM SAFETY INDEX (KPI)</p>
+                    <canvas id="safetyScoreChart"></canvas>
+                </div>
+                <div class="graph-box highlight-aqi">
+                    <p class="graph-title">CPCB INDIA AQI STANDARD</p>
+                    <canvas id="cpcbAqiChart"></canvas>
+                </div>
+                <div class="log-container">
+                    <p class="graph-title">BLOCKCHAIN AUDIT LOG</p>
+                    <div id="audit-log" class="audit-log-sheet"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="aero_logic.js"></script>
+</body>
+</html>
