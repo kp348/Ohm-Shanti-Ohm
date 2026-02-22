@@ -17,7 +17,7 @@
 // --- Configuration ---
 const char* ssid = "XXXXXXXX";
 const char* password = "XXXXXXXX";
-const char* serverUrl = "render website link"; 
+const char* serverUrl = "render bridge link"; 
 const int ALERT_THRESHOLD = 105; // Slightly higher to account for noise
 
 // --- PPM Mapping ---
