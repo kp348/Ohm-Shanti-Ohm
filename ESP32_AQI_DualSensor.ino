@@ -15,9 +15,9 @@
 #define RELAY_PIN     27
 
 // --- Configuration ---
-const char* ssid = "Jeffrey Dahmer";
-const char* password = "mihika@2014";
-const char* serverUrl = "https://aqi-bridge.onrender.com/api/data"; 
+const char* ssid = "XXXXXXXX";
+const char* password = "XXXXXXXX";
+const char* serverUrl = "render website link"; 
 const int ALERT_THRESHOLD = 105; // Slightly higher to account for noise
 
 // --- PPM Mapping ---
